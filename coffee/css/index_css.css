@@ -1,0 +1,288 @@
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, td, img, div, a, span {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+	
+}
+ol,ul>li {
+ list-style: none;
+}
+
+boby {
+ font-size: 12px;
+ font-family: "微软雅黑";
+}
+
+a {
+ text-decoration: none;
+}
+
+input{
+ outline: none;
+}
+.top{
+	width: 100%;
+	height: 34px;
+	background-color: #003a8f;
+	position: relative;
+	
+}
+.concent{
+ width: 1024px;
+ margin: 0 auto;
+ position: relative;
+}
+.concent_top{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+/* 首页按钮样式 */
+.concent_top_home, .concent_top_EN {
+ float: left;
+ width: 62px;
+ height: 34px;
+ line-height: 34px;
+ font-size: 16px;
+ padding: 0 15px;
+ background: #003179;
+ text-align: center;
+}
+.concent_top_EN{
+	width: 74px;
+}
+
+.concent a {
+ color: #fff;
+}
+
+/* 检索样式 */
+.concent_top_search {
+width: 306px;
+height: 34px;
+background: #1658ba;
+position: relative;
+float: left;
+}
+
+/* 检索框样式 */
+.concent_top_search input{
+	width: 252px;
+	height: 20px;
+	line-height: 20px;
+	color: #709de0;
+	padding: 7px 10px;
+	border: 0 none;
+	outline: none;
+	background: 0 none;
+}
+
+/* .concent input{
+	width: 252px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 15px;
+	color: #709de0;
+	padding: 7px 10px;
+	border: 0 none;
+	background: 0 none;
+	display: inline-block;
+	margin: 0;
+	float: left;
+} */
+
+
+/* 检索放大镜按钮 */
+.concent_top_search a{
+	display: inline-block;
+	width: 34px;
+	height: 34px;
+	background: url(../img/index/top_search_icon.png);
+	background-size: 100% 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.menu{
+ width: 100%;
+ height: 120px;
+}
+.menu_concent{
+	width: 1366px;
+	margin: 0 auto;
+	position: relative;
+	display: block;
+}
+.menu_logo{
+ width: 273px;
+ height: 80px;
+ float: left;
+ margin-top: 16px;
+ }
+.menu_concent_title{
+	position: absolute;
+ text-align: center;
+ height: 120px;
+ display: inline-block;
+ top: 0;
+ right: 0;
+ border-bottom: 7px solid #fff;
+}
+.menu_concent_title li{
+ display:inline-block;
+ float: left;
+ text-align: -webkit-match-parent;
+}
+.menu_concent_title a{
+ color: #535353;
+ font-size: 18px;
+ height: 113px;
+ line-height: 113px;
+ padding: 0 26px;
+
+}
+.menu_title{
+	float: left;
+}
+.menu_title:hover{
+	background: #f3f5f8;
+	border-bottom: 7px solid #003b90;
+}
+
+/* 轮播图 */
+.banner{
+	/* width: 100%; */
+	width: 1903px;
+	height: 700px;
+	overflow: hidden;
+	position: relative;
+	background-color: aqua;
+}
+
+/* 视频 */
+.video{
+	width: 1903px;
+	height:600px;
+	background: #f2f4f7; 
+	margin-top: 14px;
+	overflow: hidden;
+}
+
+/* 大图简介 1 2 3 的最外侧div (第一个和第三个一样 所以class名一样)*/
+.index_adv1,.index_adv2{
+	width: 100%;
+	margin-top: 14px;
+}
+
+/* 咖啡培训学院背景色 第二个不一样的 */
+.index_adv2{
+	background: #f8f9fb;
+}
+
+/* 图片+文字那个div */
+.concent{
+	width: 1366px;
+	margin: 0 auto;
+	position: relative;
+}
+
+/* 图片和文字的父级div 用于 控制位置 */
+.index_adv1_bg,.index_adv2_bg{
+	width: 100%;
+	height: 675px;
+	position: relative;
+}
+
+/* 设置这三张图片格式 */
+.index_adv1_bg,.index_adv2_bg img{
+	width: 100%;
+	height: 675px;
+}
+
+/* 设置一 三文字的样式及位置 */
+.index_adv1 .index_adv_text{
+	width: 500px;
+	height: 675px;
+	/* 背景为透明图 */
+	background:url(../img/index/adv_white_bg.png) repeat;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+/* 设置二的文字样式及位置 */
+.index_adv2 .index_adv_text{
+	width: 500px;
+	height: 675px;
+	background: url(../img/index/adv_blue_bg.png) repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* 设置一三的标题文字格式 */
+.index_adv1 h2{
+	/* 文字格式还原伟默认 */
+	font-weight: normal;
+	font-size: 36px;
+	padding: 190px 0 0 91px;
+	color: #003a8f;
+}
+
+/* 设置一三的p标签样式 */
+.index_adv1 p{
+	font-size: 17px;
+	line-height: 32px;
+	padding: 26px 89px 0;
+	color: #4e4e4e;
+	/* 对齐方式 两端对齐 */
+	text-align: justify;
+}
+
+/* 设置一三的a标签样式 */
+.index_adv1 a{
+	color: #003a8f;
+	width: 101px;
+	padding: 8px 0;
+	border: 1px solid #003a8f;
+	/* 转换为行内块元素 */
+	display: inline-block;
+	text-align: center;
+	margin: 24px 0 0 89px;
+}
+
+
+/* 设置二的标题文字格式 */
+.index_adv2 h2{
+	/* 更改文字样式为默认值 */
+	font-weight: normal;
+	font-size: 36px;
+	/* 文字内边距 */
+	padding: 190px 0 0 91px;
+	color: #d3a358;
+}
+
+/* 设置二的图片介绍 文字样子 */
+.index_adv2 p{
+	font-size: 17px;
+	line-height: 32px;
+	/* 设置文字左右内边距 */
+	padding: 15px 89px 0;
+	color: #fff;
+	/* 文字两端对齐 */
+	text-align: justify;
+}
+
+/* 设置二图片文字下的a标签样式 */
+.index_adv2 a{
+	color: #d3a358;
+	width: 101px;
+	/* 内边距 扩大方框大小 */
+	padding: 8px 0;
+	border: 1px solid #d3a358;
+	display: inline-block;
+	text-align: center;
+	/* 外边距 控制位置 */
+	margin: 36px 0 0 89px;
+}
