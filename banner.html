@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+        }
+
+        .all {
+            width: 100%;
+            height: 700px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .screen {
+            height: 700px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen li {
+            height: 700px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .screen li>img {
+            width: 2100px;
+        }
+
+        .screen ul {
+            position: absolute;
+            left: 0;
+            top: 0px;
+            width: 12600px;
+        }
+
+
+        /* 显示当前在第几张图片 */
+        .btn_bg{
+            width: 1366px;
+            height: 10px;
+            position: absolute;
+            top: 518px;
+            left: 50%;
+            margin-left: -683px;
+            z-index: 20;
+        }
+
+        .btn{
+            width: 500px;
+            height: 10px;
+            text-align: center;
+            float: right;
+
+        }
+        
+        .current {
+            border: 1px solid #fff;
+            background: 0 none !important;
+            margin-top: 0 !important;
+        }
+        .all ol{
+            display: inline-block;
+            text-align: center;
+        }
+        .all ol li  {
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            display: inline-block;
+            margin-right: 32px;
+            margin-top: 1px;
+            border-radius: 50%;
+            overflow: hidden;
+            cursor: pointer;
+            line-height: 200px;
+            float: right;
+        }
+
+
+
+
+
+        #arr span {
+            display: none;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+
+
+
+
+
+        /* 自定义样式 */
+
+        .content {
+            width: 1366px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -683px;
+            z-index: 10;
+        }
+
+        .content_bg {
+            width: 500px;
+            height: 700px;
+            background: url(./img/banner/banner_bg.png) repeat;
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #fff;
+        }
+
+        .text {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .text>h2 {
+            font-weight: normal;
+            font-size: 36px;
+            padding-top: 190px;
+            text-align: center;
+        }
+
+        .text>p {
+            font-size: 17px;
+            line-height: 32px;
+            padding: 26px 89px 0;
+            text-align: justify;
+        }
+
+        .text>a {
+            color: #d3a358;
+            width: 101px;
+            padding: 8px 0;
+            border: 1px solid #d3a358;
+            display: inline-block;
+            text-align: center;
+            margin: 26px 0 0 89px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all" id='all'>
+        <div class="screen" id="screen">
+            <ul id="ul">
+                <li><img src="./img/banner/1.jpg" /></li>
+                <li><img src="./img/banner/2.jpg" /></li>
+                <li><img src="./img/banner/3.jpg" /></li>
+                <li><img src="./img/banner/4.jpg" /></li>
+                <li><img src="./img/banner/2.jpg" /></li>
+                <li><img src="./img/banner/1.jpg" /></li>
+            </ul>
+            <div class="btn_bg">
+                <div class="btn">
+                    <ol id="ol">
+                        <li ><a class="current" href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                    </ol>
+                </div>
+            </div>
+
+            <div id="arr">
+                <span id="left">
+                    << /span>
+                        <span id="right">></span>
+            </div>
+            <div class="content">
+                <div class="content_bg">
+                    <div class="text">
+                        <h2>金米兰咖啡梦工厂</h2>
+                        <p>我们始终保持着创业初期的激情，在世界范围内寻找优质咖啡原料，认真烘焙、拼配，努力使每一颗咖啡豆都能释放出恰如其分的芳香。</p>
+                        <a href="#">了解更多</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+
+        var box = document.getElementById("all");
+        var ul = document.getElementById("ul");
+        var ol = document.getElementById("ol");
+        var div = document.getElementById("arr");
+        var ulLiArr = ul.children;
+
+        // var newLi = ulLiArr[0].cloneNode(true);
+        // ul.appendChild(newLi);
+
+        // for(var i=0;i<ulLiArr.length-1;i++){
+        //     var newOlLi = document.createElement("li");
+        //     newOlLi.innerHTML = i+1;
+        //     ol.appendChild(newOlLi);
+        // }
+
+        var olLiArr = ol.children;
+        //ol.children[0].className = "current";
+
+        for (var i = 0; i < olLiArr.length; i++) {
+            olLiArr[i].index = i;
+            olLiArr[i].onmouseover = function () {
+                for (var j = 0; j < olLiArr.length; j++) {
+                    olLiArr[j].className = "";
+                }
+                olLiArr[this.index].className = "current";
+                animate(ul, -this.index * ul.children[0].offsetWidth);
+                key = square = this.index;
+            }
+        }
+
+        var timer = null;
+        var key = 0;//图片
+        var square = 0;//小方块
+        timer = setInterval(autoPlay, 2000);
+
+        function autoPlay() {
+            key++;
+            square++;
+            if (key > olLiArr.length) {
+                key = 1;
+                ul.style.left = 0;
+            }
+
+            animate(ul, -key * ul.children[0].offsetWidth);
+
+            square = square > olLiArr.length - 1 ? 0 : square;
+            for (var j = 0; j < olLiArr.length; j++) {
+                olLiArr[j].className = "";
+            }
+            olLiArr[square].className = "current";
+        }
+
+        box.onmouseover = function () {
+            clearInterval(timer);
+        }
+        box.onmouseout = function () {
+            timer = setInterval(autoPlay, 2000);
+        }
+
+        var btnArr = div.children;
+        btnArr[0].onclick = function () {
+            key--;
+            square--;
+            if (key < 0) {
+                key = 4;
+                ul.style.left = -5 * ul.children[0].offsetWidth + "px";
+            }
+
+            animate(ul, -key * ul.children[0].offsetWidth);
+
+            square = square < 0 ? olLiArr.length - 1 : square;
+            for (var j = 0; j < olLiArr.length; j++) {
+                olLiArr[j].className = "";
+            }
+            olLiArr[square].className = "current";
+        }
+        btnArr[1].onclick = function () {
+            autoPlay();
+        }
+
+        function animate(obj, target) {
+            clearInterval(obj.timer);
+            var speed = obj.offsetLeft < target ? 15 : -15;
+            obj.timer = setInterval(function () {
+                var result = target - obj.offsetLeft;
+                obj.style.left = obj.offsetLeft + speed + "px";
+                if (Math.abs(result) <= 15) {
+                    obj.style.left = target + "px";
+                    clearInterval(obj.timer);
+                }
+            }, 10);
+        }
+    </script>
+</body>
+
+</html>
